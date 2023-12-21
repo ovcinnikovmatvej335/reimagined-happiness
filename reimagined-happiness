@@ -1,0 +1,18 @@
+case .addShape(let shapeData):
+            newCollage.shapes.append(shapeData)
+            
+        case .changeBackground(let action):
+            newCollage.background = shapeReducer.reduce(newCollage.background, action)
+        case .removeShape, .removeText, .removeSticker:
+            newState.selectedElement = nil
+            
+        default:
+            break
+        }
+        
+        return newState
+    }
+    
+}
+
+
